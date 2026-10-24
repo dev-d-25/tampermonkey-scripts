@@ -31,3 +31,7 @@ You also need uBlock Origin to allow ads on the farm domains, or no real ad ifra
 ```
 
 Usage: open a vplink link, wait a beat for ads to load on the farm page, click once inside any ad, then click Continue when it appears. The console (`note:` in the `[vplink-skip] status` lines) tells you where you are.
+
+## youtube-watch-layout.user.js
+
+Brings back the old YouTube watch page layout (comments on the right, not the bottom sheet). YouTube gates the new layout behind experiment flags, so the script flips those flags off the moment YouTube assigns them: it watches `window.yt` → `config_` → `EXPERIMENT_FLAGS` and patches each level as it appears, then re-patches on every page navigation in case YouTube resets them. The Oct 2026 right-side rail that comes with the new layout is hidden with CSS. Credit for the flag list: u/s4muka11, via uBlock Origin filters.
